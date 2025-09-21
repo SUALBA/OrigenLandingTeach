@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colectivo Origen Blue Team · Seguridad y Tecnología para PYMES</title>
+  <meta name="description" content="Colectivo de profesionales en ciberseguridad, datos e infra. Servicios accesibles y efectivos para PYMES, colegios y particulares." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="origen.png" type="image/png" />
+  <meta property="og:image" content="origen.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    .grid-dot { background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px); background-size: 18px 18px; }
+    .glow { box-shadow: 0 0 0 1px rgba(16,185,129,.25), 0 10px 40px rgba(16,185,129,.12); }
+    .card { border: 1px solid rgba(255,255,255,.08); background: rgba(17,24,39,.65); backdrop-filter: blur(6px); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spin-on-hover:hover { animation: spin 1.6s linear infinite; }
+    .bg-grid-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34h20v-20H36v20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100">
+  <!-- Sticky CTA -->
+  <a href="#contacto" class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-full bg-emerald-500 text-neutral-900 px-5 py-3 font-semibold shadow-lg hover:translate-y-[-1px] transition">
+    🚀 Empezar proyecto
+  </a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-white/10 backdrop-blur bg-neutral-950/70">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="origen.png" alt="Logo peonza · Origen" class="h-8 w-8 rounded-lg object-contain spin-on-hover" />
+        <span class="text-lg font-semibold tracking-tight">Colectivo Origen<span class="text-emerald-400">BlueTeam</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#servicios" class="hover:text-emerald-300">Servicios</a>
+        <a href="#metodologia" class="hover:text-emerald-300">Metodología</a>
+        <a href="#equipo" class="hover:text-emerald-300">Equipo</a>
+        <a href="#precios" class="hover:text-emerald-300">Planes</a>
+        <a href="#faq" class="hover:text-emerald-300">FAQ</a>
+        <a href="#contacto" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500/10 px-3 py-2 ring-1 ring-emerald-500/30 hover:bg-emerald-500/20">Solicitar propuesto</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg ring-1 ring-neutral-700 px-3 py-2">☰</button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-neutral-950">
+      <div class="px-4 py-3 space-y-2 text-sm">
+        <a href="#servicios" class="block py-2 hover:text-emerald-300">Servicios</a>
+        <a href="#metodologia" class="block py-2 hover:text-emerald-300">Metodología</a>
+        <a href="#equipo" class="block py-2 hover:text-emerald-300">Equipo</a>
+        <a href="#precios" class="block py-2 hover:text-emerald-300">Planes</a>
+        <a href="#faq" class="block py-2 hover:text-emerald-300">FAQ</a>
+        <a href="#contacto" class="block py-2 rounded-lg bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-500/30 text-center">Solicitar propuesta</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-800">
+    <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+    <div class="mx-auto max-w-7xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center relative z-10">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">
+          <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Blue Team · Educación Digital · Open Source
+        </div>
+        <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+          Seguridad y tecnología
+          <span class="block bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400">que inspiran confianza</span>
+        </h1>
+        <p class="mt-5 text-neutral-300 md:text-lg max-w-xl">
+          Expertos en ciberseguridad que hablan tu idioma. Convertimos la complejidad técnica en estrategias claras, costes predecibles y tranquilidad real para tu negocio.
+        </p>
+      
+        <div class="mt-6 text-xs text-neutral-400 flex flex-wrap gap-4">
+          <span>✔ Entregables desde la primera semana</span>
+          <span>✔ Respuesta en &lt;48h</span>
+          <span>✔ Preferencia por open source</span>
+        </div>
+        
+        <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-500/15 px-3 py-1 text-sm text-amber-300">
+          <span class="inline-flex h-2 w-2 rounded-full bg-amber-400 animate-pulse"></span>
+          Nuevo: Seguridad Digital para AMPAs y colegios
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-video w-full rounded-2xl border border-white/10 bg-gradient-to-br from-neutral-900 to-neutral-800 p-4 shadow-xl glow">
+          <div class="grid grid-cols-6 gap-3 h-full">
+            <div class="col-span-3 rounded-xl bg-neutral-900 ring-1 ring-white/5">
+              <img src="trabajandopc.jpg" alt="B2B Business" class="w-full h-full object-cover rounded-xl" />
+            </div>
+            <div class="col-span-3 rounded-xl bg-neutral-900 ring-1 ring-white/5">
+              <img src="lanube.jpg" alt="Cybersecurity" class="w-full h-full object-cover rounded-xl" />
+            </div>
+            <div class="col-span-2 rounded-xl bg-neutral-900 ring-1 ring-white/5">
+              <img src="colegiopantallas.webp" alt="colegio digital" class="w-full h-full object-cover rounded-xl" />
+            </div>
+            <div class="col-span-2 rounded-xl bg-neutral-900 ring-1 ring-white/5">
+              <img src="manosnegocio.jpg" alt="Business Partnership" class="w-full h-full object-cover rounded-xl" />
+            </div>
+            <div class="col-span-2 rounded-xl bg-neutral-900 ring-1 ring-white/5">
+              <img src="oficnateam.jpg" alt="Office Team" class="w-full h-full object-cover rounded-xl" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <section class="border-t border-white/10 bg-neutral-900">
+    <div class="mx-auto max-w-7xl px-4 py-8">
+      <div class="text-center text-xs uppercase tracking-widest text-neutral-400 mb-4">Confían en nuestro trabajo</div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 opacity-80">
+        <div class="h-10 bg-neutral-800 rounded-lg border border-white/5 flex items-center justify-center">
+          <span class="text-xs text-neutral-400">PYMES</span>
+        </div>
+        <div class="h-10 bg-neutral-800 rounded-lg border border-white/5 flex items-center justify-center">
+          <span class="text-xs text-neutral-400">STARTUPS</span>
+        </div>
+        <div class="h-10 bg-neutral-800 rounded-lg border border-white/5 flex items-center justify-center">
+          <span class="text-xs text-neutral-400">ONG'S</span>
+        </div>
+        <div class="h-10 bg-neutral-800 rounded-lg border border-white/5 flex items-center justify-center">
+          <span class="text-xs text-neutral-400">Educación</span>
+        </div>
+        <div class="h-10 bg-neutral-800 rounded-lg border border-white/5 flex items-center justify-center">
+          <span class="text-xs text-neutral-400">Administración Pública</span>
+        </div>
+        <div class="h-10 bg-neutral-800 rounded-lg border border-white/5 flex items-center justify-center">
+          <span class="text-xs text-neutral-400">Sector sanitario</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="border-t border-white/10 bg-neutral-900">
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <div class="flex items-end justify-between gap-6 mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold">Servicios principales</h2>
+        <a href="#contacto" class="hidden md:inline-flex items-center gap-2 text-sm rounded-lg px-3 py-2 ring-1 ring-neutral-700">Pedir propuesta</a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="card rounded-2xl p-6 hover:bg-white/5 transition">
+          <div class="text-3xl">🔒</div>
+          <h3 class="mt-3 text-lg font-semibold">Blue Team para PYMES</h3>
+          <p class="mt-2 text-sm text-neutral-300">Evaluaciones, hardening, políticas y respuesta ante incidentes.</p>
+          <ul class="mt-3 space-y-1 text-sm text-neutral-400 list-disc list-inside">
+            <li>Auditoría básica / avanzada</li>
+            <li>Phishing controlado y formación</li>
+            <li>Monitorización ligera (Wazuh, Zeek)</li>
+          </ul>
+        </article>
+        <article class="card rounded-2xl p-6 hover:bg-white/5 transition">
+          <div class="text-3xl">🎓</div>
+          <h3 class="mt-3 text-lg font-semibold">Educación Digital & AMPAs</h3>
+          <p class="mt-2 text-sm text-neutral-300">Charlas, talleres y auditorías de seguridad para colegios y familias.</p>
+          <ul class="mt-3 space-y-1 text-sm text-neutral-400 list-disc list-inside">
+            <li>Auditoría de pizarras digitales y dispositivos</li>
+            <li>Talleres para familias: "Ciberseguridad en casa"</li>
+            <li>Asesoramiento continuo para AMPAs</li>
+            <li>Higiene digital y privacidad para menores</li>
+          </ul>
+          <div class="mt-3 inline-block text-xs px-2 py-1 rounded-full bg-amber-500/10 text-amber-300 ring-1 ring-amber-500/30">
+            Servicio nuevo
+          </div>
+        </article>
+        <article class="card rounded-2xl p-6 hover:bg-white/5 transition">
+          <div class="text-3xl">📊</div>
+          <h3 class="mt-3 text-lg font-semibold">Datos & IA aplicada</h3>
+          <p class="mt-2 text-sm text-neutral-300">Analítica, automatización y asistentes privados on‑prem.</p>
+          <ul class="mt-3 space-y-1 text-sm text-neutral-400 list-disc list-inside">
+            <li>Cuadros de mando</li>
+            <li>RPA / automatizaciones</li>
+            <li>NLP/LLM privados</li>
+          </ul>
+        </article>
+        <article class="card rounded-2xl p-6 hover:bg-white/5 transition">
+          <div class="text-3xl">🧩</div>
+          <h3 class="mt-3 text-lg font-semibold">IT & Open Source</h3>
+          <p class="mt-2 text-sm text-neutral-300">ERP/CRM, wikis, ticketing, VPN, backups 3‑2‑1 y SSO.</p>
+          <ul class="mt-3 space-y-1 text-sm text-neutral-400 list-disc list-inside">
+            <li>Hardening y backups</li>
+            <li>Control de acceso</li>
+            <li>Cloud híbrido</li>
+          </ul>
+        </article>
+        <article class="card rounded-2xl p-6 hover:bg-white/5 transition">
+          <div class="text-3xl">⚙️</div>
+          <h3 class="mt-3 text-lg font-semibold">Desarrollo web a medida</h3>
+          <p class="mt-2 text-sm text-neutral-300">Django / Flask / FastAPI. Integraciones, APIs y paneles.</p>
+          <ul class="mt-3 space-y-1 text-sm text-neutral-400 list-disc list-inside">
+            <li>Landing + blog técnico</li>
+            <li>Paneles internos</li>
+            <li>Integración con SIEM / logs</li>
+          </ul>
+        </article>
+        <article class="card rounded-2xl p-6 hover:bg-white/5 transition">
+          <div class="text-3xl">🛟</div>
+          <h3 class="mt-3 text-lg font-semibold">Soporte y acompañamiento</h3>
+          <p class="mt-2 text-sm text-neutral-300">Planes mensuales ligeros y sin permanencia.</p>
+          <ul class="mt-3 space-y-1 text-sm text-neutral-400 list-disc list-inside">
+            <li>Respuesta en &lt;48h</li>
+            <li>Mantenimiento y actualizaciones</li>
+            <li>Canal directo</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metodología -->
+  <section id="metodologia" class="border-t border-white/10 bg-neutral-900">
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold">Metodología Blue Team</h2>
+        <p class="mt-4 text-neutral-300">Procesos contrastados en entornos enterprise, adaptados a la realidad de PYMES y centros educativos.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card rounded-2xl p-6 group hover:ring-1 hover:ring-emerald-400/30 transition-all">
+          <div class="text-2xl mb-4 text-emerald-400">1</div>
+          <h3 class="font-semibold text-lg mb-3">Diagnóstico</h3>
+          <p class="text-sm text-neutral-300 mb-4">Análisis de arquitectura, dispositivos y procesos mediante checklist técnico y entrevistas.</p>
+          <ul class="text-xs text-neutral-400 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Entrevista técnica</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Inventario activos</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Análisis de riesgos</li>
+          </ul>
+        </div>
+        
+        <div class="card rounded-2xl p-6 group hover:ring-1 hover:ring-emerald-400/30 transition-all">
+          <div class="text-2xl mb-4 text-emerald-400">2</div>
+          <h3 class="font-semibold text-lg mb-3">Plan de acción</h3>
+          <p class="text-sm text-neutral-300 mb-4">Roadmap priorizado con entregables claros, plazos y costes definidos sin sorpresas.</p>
+          <ul class="text-xs text-neutral-400 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Priorización de riesgos</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Cronograma claro</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Presupuesto cerrado</li>
+          </ul>
+        </div>
+        
+        <div class="card rounded-2xl p-6 group hover:ring-1 hover:ring-emerald-400/30 transition-all">
+          <div class="text-2xl mb-4 text-emerald-400">3</div>
+          <h3 class="font-semibold text-lg mb-3">Implementación</h3>
+          <p class="text-sm text-neutral-300 mb-4">Ejecución técnica con herramientas enterprise y documentación clara para el cliente.</p>
+          <ul class="text-xs text-neutral-400 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Hardening de sistemas</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Automatización</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Formación práctica</li>
+          </ul>
+        </div>
+        
+        <div class="card rounded-2xl p-6 group hover:ring-1 hover:ring-emerald-400/30 transition-all">
+          <div class="text-2xl mb-4 text-emerald-400">4</div>
+          <h3 class="font-semibold text-lg mb-3">Soporte continuo</h3>
+          <p class="text-sm text-neutral-300 mb-4">Monitorización proactiva y soporte ágil para mantener los sistemas seguros.</p>
+          <ul class="text-xs text-neutral-400 space-y-1">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Monitorización 24/7</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Respuesta en &lt;24h</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">•</span> Mejoras continuas</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Métricas de confianza -->
+      <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-3xl font-bold text-emerald-400">100%</div>
+          <div class="text-sm text-neutral-400 mt-2">Proyectos con entregables en tiempo</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-emerald-400">&lt;24h</div>
+          <div class="text-sm text-neutral-400 mt-2">Tiempo medio de respuesta</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-emerald-400">0</div>
+          <div class="text-sm text-neutral-400 mt-2">Incidentes graves en clientes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Específica para AMPAs -->
+  <section id="ampas" class="border-t border-white/10 bg-gradient-to-r from-neutral-900 to-emerald-900/20 relative">
+    <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div class="mx-auto max-w-7xl px-4 py-16 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold">Seguridad Digital Educativa para AMPAs</h2>
+        <p class="mt-4 text-neutral-300">Ayudamos a las asociaciones de padres y madres a garantizar la privacidad y seguridad digital de sus hijos en el entorno escolar.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Nuestros servicios para AMPAs</h3>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 h-10 w-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">🔍</div>
+              <div>
+                <h4 class="font-medium">Auditoría de dispositivos escolares</h4>
+                <p class="mt-1 text-sm text-neutral-300">Revisión de pizarras digitales, tablets y apps del centro. Informe claro con recomendaciones.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 h-10 w-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">👨‍👩‍👧‍👦</div>
+              <div>
+                <h4 class="font-medium">Talleres para familias</h4>
+                <p class="mt-1 text-sm text-neutral-300">Charlas prácticas sobre ciberseguridad en casa, control parental y uso responsable de tecnología.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 h-10 w-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">🛡️</div>
+              <div>
+                <h4 class="font-medium">Asesoramiento continuo</h4>
+                <p class="mt-1 text-sm text-neutral-300">Soporte durante el curso escolar para resolver dudas sobre nuevas tecnologías en el aula.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contacto" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-emerald-500 text-neutral-900 px-4 py-2 font-semibold">
+            Solicitar información para AMPAs
+          </a>
+        </div>
+        <div class="bg-neutral-900/50 rounded-2xl p-6 border border-white/10">
+          <h4 class="font-semibold mb-4">Preguntas frecuentes de AMPAs</h4>
+          <div class="space-y-3">
+            <details class="py-2 border-b border-white/5">
+              <summary class="cursor-pointer font-medium text-sm">¿Por qué debería preocuparme la seguridad de las pizarras digitales?</summary>
+              <p class="mt-2 text-xs text-neutral-400">Muchas pizarras tienen cámaras y micrófonos conectados a internet. Sin la configuración adecuada, podrían ser vulnerables.</p>
+            </details>
+            <details class="py-2 border-b border-white/5">
+              <summary class="cursor-pointer font-medium text-sm">¿Qué presupuesto necesita un AMPA para estos servicios?</summary>
+              <p class="mt-2 text-xs text-neutral-400">Nuestros packs empiezan desde 450€ para auditorías básicas, adaptándonos a los presupuestos de cada asociación.</p>
+            </details>
+            <details class="py-2 border-b border-white/5">
+              <summary class="cursor-pointer font-medium text-sm">¿Ofrecen charlas presenciales en toda España?</summary>
+              <p class="mt-2 text-xs text-neutral-400">Tenemos equipo en varias ciudades y también ofrecemos formatos online para llegar a cualquier centro.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section id="equipo" class="border-t border-white/10 bg-neutral-900">
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold">Equipo y ciudades</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="rounded-2xl border border-white/10 bg-neutral-950/40 p-5"><div class="flex items-center gap-3"><div class="h-10 w-10 rounded-full bg-neutral-800"></div><div><div class="font-semibold">Miguel A.C.</div><div class="text-xs text-neutral-400">Valladolid</div></div></div><p class="mt-3 text-sm text-neutral-300">Especialidad: Blue Team</p><div class="mt-3 flex gap-2 text-xs text-neutral-400"><a href="https://linkedin.com" target="_blank" class="underline">LinkedIn</a><span>•</span><a href="https://github.com" target="_blank" class="underline">GitHub</a></div></div>
+        <div class="rounded-2xl border border-white/10 bg-neutral-950/40 p-5"><div class="flex items-center gap-3"><div class="h-10 w-10 rounded-full bg-neutral-800"></div><div><div class="font-semibold">Erwan</div><div class="text-xs text-neutral-400">Madrid</div></div></div><p class="mt-3 text-sm text-neutral-300">Especialidad: Consultoria </p><div class="mt-3 flex gap-2 text-xs text-neutral-400"><a href="https://linkedin.com" target="_blank" class="underline">LinkedIn</a><span>•</span><a href="https://github.com" target="_blank" class="underline">GitHub</a></div></div>
+        <div class="rounded-2xl border border-white/10 bg-neutral-950/40 p-5"><div class="flex items-center gap-3"><div class="h-10 w-10 rounded-full bg-neutral-800"></div><div><div class="font-semibold">David</div><div class="text-xs text-neutral-400">Madrid</div></div></div><p class="mt-3 text-sm text-neutral-300">Especialidad: Datos & IA </p><div class="mt-3 flex gap-2 text-xs text-neutral-400"><a href="https://linkedin.com" target="_blank" class="underline">LinkedIn</a><span>•</span><a href="https://github.com" target="_blank" class="underline">GitHub</a></div></div>
+        <div class="rounded-2xl border border-white/10 bg-neutral-950/40 p-5"><div class="flex items-center gap-3"><div class="h-10 w-10 rounded-full bg-neutral-800"></div><div><div class="font-semibold">Phantum</div><div class="text-xs text-neutral-400">Ciudad 4</div></div></div><p class="mt-3 text-sm text-neutral-300">Especialidad:Infra & Open Source </p><div class="mt-3 flex gap-2 text-xs text-neutral-400"><a href="https://linkedin.com" target="_blank" class="underline">LinkedIn</a><span>•</span><a href="https://github.com" target="_blank" class="underline">GitHub</a></div></div>
+        <div class="rounded-2xl border border-white/10 bg-neutral-950/40 p-5"><div class="flex items-center gap-3"><div class="h-10 w-10 rounded-full bg-neutral-800"></div><div><div class="font-semibold">Nombre 5</div><div class="text-xs text-neutral-400">Ciudad 5</div></div></div><p class="mt-3 text-sm text-neutral-300">Especialidad: Formación</p><div class="mt-3 flex gap-2 text-xs text-neutral-400"><a href="https://linkedin.com" target="_blank" class="underline">LinkedIn</a><span>•</span><a href="https://github.com" target="_blank" class="underline">GitHub</a></div></div>
+        <div class="rounded-2xl border border-white/10 bg-neutral-950/40 p-5"><div class="flex items-center gap-3"><div class="h-10 w-10 rounded-full bg-neutral-800"></div><div><div class="font-semibold">Nombre 6</div><div class="text-xs text-neutral-400">Ciudad 6</div></div></div><p class="mt-3 text-sm text-neutral-300">Especialidad: Soporte</p><div class="mt-3 flex gap-2 text-xs text-neutral-400"><a href="https://linkedin.com" target="_blank" class="underline">LinkedIn</a><span>•</span><a href="https://github.com" target="_blank" class="underline">GitHub</a></div></div>
+        <div class="rounded-2xl border border-white/10 bg-neutral-950/40 p-5"><div class="flex items-center gap-3"><div class="h-10 w-10 rounded-full bg-neutral-800"></div><div><div class="font-semibold">Susana A.</div><div class="text-xs text-neutral-400">Barcelona</div></div></div><p class="mt-3 text-sm text-neutral-300">Especialidad: Desarrollo</p><div class="mt-3 flex gap-2 text-xs text-neutral-400"><a href="https://linkedin.com" target="_blank" class="underline">LinkedIn</a><span>•</span><a href="https://github.com/SUALBA" target="_blank" class="underline">GitHub</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precios / planes -->
+  <section id="precios" class="border-t border-white/10 bg-neutral-900">
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold">Planes simples y transparentes</h2>
+        <p class="mt-2 text-neutral-300">Sin permanencias. Facturación por proyecto o mensual.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="card rounded-2xl p-6">
+          <div class="inline-block text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-300 ring-1 ring-blue-500/30">Para AMPAs</div>
+          <h3 class="mt-2 text-lg font-semibold">Seguridad Educativa</h3>
+          <p class="text-sm text-neutral-400">Auditoría básica + taller para familias.</p>
+          <div class="mt-4 text-3xl font-extrabold">450€</div>
+          <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+            <li>Revisión de 2-3 dispositivos</li>
+            <li>Análisis de apps educativas</li>
+            <li>Taller de 90min para padres</li>
+            <li>Informe ejecutivo</li>
+          </ul>
+          <a href="#contacto" class="mt-6 inline-flex justify-center w-full rounded-xl bg-emerald-400 text-neutral-900 font-semibold py-2">Solicitar</a>
+        </div>
+        <div class="card rounded-2xl p-6 ring-1 ring-emerald-500/30">
+          <div class="inline-block text-xs px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-500/30">Recomendado</div>
+          <h3 class="mt-2 text-lg font-semibold">Avanzado</h3>
+          <p class="text-sm text-neutral-400">Blue Team + formación + automatización.</p>
+          <div class="mt-4 text-3xl font-extrabold">€€</div>
+          <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+            <li>Hardening + simulacro</li>
+            <li>Dashboards o RPA básica</li>
+            <li>Canal directo</li>
+          </ul>
+          <a href="#contacto" class="mt-6 inline-flex justify-center w-full rounded-xl bg-emerald-400 text-neutral-900 font-semibold py-2">Solicitar</a>
+        </div>
+        <div class="card rounded-2xl p-6">
+          <h3 class="text-lg font-semibold">A medida</h3>
+          <p class="text-sm text-neutral-400">Proyectos cerrados y desarrollos específicos.</p>
+          <div class="mt-4 text-3xl font-extrabold">€€€</div>
+          <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+            <li>Roadmap personalizado</li>
+            <li>Integraciones / APIs</li>
+            <li>Soporte ampliado</li>
+          </ul>
+          <a href="#contacto" class="mt-6 inline-flex justify-center w-full rounded-xl bg-emerald-400 text-neutral-900 font-semibold py-2">Solicitar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios breves -->
+  <section class="border-t border-white/10 bg-neutral-800">
+    <div class="mx-auto max-w-7xl px-4 py-16 grid md:grid-cols-3 gap-6">
+      <div class="card rounded-2xl p-6 text-sm text-neutral-300">
+        "La auditoría de las pizarras digitales nos dio la tranquilidad que necesitábamos como AMPA. Las recomendaciones fueron claras y prácticas."
+        <div class="mt-3 text-xs text-neutral-400">— Presidente de AMPA, Madrid</div>
+      </div>
+      <div class="card rounded-2xl p-6 text-sm text-neutral-300">
+        "Pasamos de cero a una política de seguridad clara en semanas. Talleres muy prácticos."
+        <div class="mt-3 text-xs text-neutral-400">— Cliente PyME</div>
+      </div>
+      <div class="card rounded-2xl p-6 text-sm text-neutral-300">
+        "Automatizar reportes nos ahorra horas cada mes."
+        <div class="mt-3 text-xs text-neutral-400">— Dirección</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="border-t border-white/10 bg-neutral-900">
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold">Preguntas frecuentes</h2>
+        <p class="mt-4 text-neutral-300">Resolvemos tus dudas sobre nuestros servicios de ciberseguridad y tecnología</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6" id="faqList">
+        <!-- Columna 1 -->
+        <div class="space-y-4">
+          <!-- Pregunta 1 -->
+          <details class="card rounded-xl p-5 group" open>
+            <summary class="cursor-pointer font-semibold text-neutral-100 flex items-center justify-between">
+              <span>¿Qué incluye una auditoría de seguridad básica?</span>
+              <span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="mt-3 pt-3 border-t border-white/10">
+              <p class="text-sm text-neutral-300">Nuestra auditoría básica incluye:</p>
+              <ul class="mt-2 text-sm text-neutral-400 space-y-1 list-disc list-inside">
+                <li>Análisis de superficie de ataque y puntos de entrada</li>
+                <li>Revisión de configuraciones de servidores y endpoints</li>
+                <li>Evaluación de políticas de contraseñas y acceso</li>
+                <li>Checklist de hardening según estándares CIS</li>
+                <li>Informe ejecutivo con priorización de riesgos</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Pregunta 2 -->
+          <details class="card rounded-xl p-5 group">
+            <summary class="cursor-pointer font-semibold text-neutral-100 flex items-center justify-between">
+              <span>¿Son seguras las herramientas open source que utilizáis?</span>
+              <span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="mt-3 pt-3 border-t border-white/10">
+              <p class="text-sm text-neutral-300">Totalmente. Trabajamos con herramientas enterprise-grade como:</p>
+              <ul class="mt-2 text-sm text-neutral-400 space-y-1">
+                <li><span class="font-medium">Wazuh</span> - SIEM de nivel enterprise</li>
+                <li><span class="font-medium">Osquery</span> - Desarrollado por Facebook/Meta</li>
+                <li><span class="font-medium">Metasploit</span> - Framework de testing</li>
+                <li><span class="font-medium">OWASP ZAP</span> - Testing de aplicaciones web</li>
+              </ul>
+              <p class="mt-3 text-sm text-neutral-300">Todas pasan por nuestro proceso de hardening y configuración segura.</p>
+            </div>
+          </details>
+
+          <!-- Pregunta 3 -->
+          <details class="card rounded-xl p-5 group">
+            <summary class="cursor-pointer font-semibold text-neutral-100 flex items-center justify-between">
+              <span>¿Ofrecen soporte continuo después del proyecto?</span>
+              <span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="mt-3 pt-3 border-t border-white/10">
+              <p class="text-sm text-neutral-300">Sí, ofrecemos varios modelos de soporte:</p>
+              <ul class="mt-2 text-sm text-neutral-400 space-y-2">
+                <li><span class="font-medium text-emerald-400">Soporte básico:</span> Respuesta en 48h, actualizaciones críticas</li>
+                <li><span class="font-medium text-emerald-400">Soporte premium:</span> Respuesta en 24h, monitorización proactiva</li>
+                <li><span class="font-medium text-emerald-400">Soporte enterprise:</span> Respuesta en 4h, gestión integral 24/7</li>
+              </ul>
+              <p class="mt-3 text-sm text-neutral-300">Sin permanencias, puedes cancelar en cualquier momento.</p>
+            </div>
+          </details>
+
+          <!-- Pregunta 4 -->
+          <details class="card rounded-xl p-5 group">
+            <summary class="cursor-pointer font-semibold text-neutral-100 flex items-center justify-between">
+              <span>¿Cómo manejan los datos sensibles de nuestros sistemas?</span>
+              <span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="mt-3 pt-3 border-t border-white/10">
+              <p class="text-sm text-neutral-300">Seguridad y confidencialidad total:</p>
+              <ul class="mt-2 text-sm text-neutral-400 space-y-1 list-disc list-inside">
+                <li>Conexiones cifradas end-to-end (VPN/SSH)</li>
+                <li>Almacenamiento en repositorios seguros y encriptados</li>
+                <li>Política estricta de "need-to-know" en el equipo</li>
+                <li>NDA personalizado para cada proyecto</li>
+                <li>Borrado seguro de datos al finalizar el proyecto</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="space-y-4">
+          <!-- Pregunta 5 -->
+          <details class="card rounded-xl p-5 group">
+            <summary class="cursor-pointer font-semibold text-neutral-100 flex items-center justify-between">
+              <span>¿Qué experiencia tienen en nuestro sector?</span>
+              <span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="mt-3 pt-3 border-t border-white/10">
+              <p class="text-sm text-neutral-300">Hemos trabajado con múltiples sectores:</p>
+              <div class="mt-3 grid grid-cols-2 gap-3 text-xs">
+                <span class="bg-neutral-800 rounded px-2 py-1 text-center">PYMES</span>
+                <span class="bg-neutral-800 rounded px-2 py-1 text-center">Startups</span>
+                <span class="bg-neutral-800 rounded px-2 py-1 text-center">Educación</span>
+                <span class="bg-neutral-800 rounded px-2 py-1 text-center">Sanidad</span>
+                <span class="bg-neutral-800 rounded px-2 py-1 text-center">E-commerce</span>
+                <span class="bg-neutral-800 rounded px-2 py-1 text-center">ONGs</span>
+              </div>
+              <p class="mt-3 text-sm text-neutral-300">Adaptamos nuestras soluciones a las necesidades específicas de cada sector.</p>
+            </div>
+          </details>
+
+          <!-- Pregunta 6 -->
+          <details class="card rounded-xl p-5 group">
+            <summary class="cursor-pointer font-semibold text-neutral-100 flex items-center justify-between">
+              <span>¿Qué metodologías de trabajo utilizáis?</span>
+              <span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="mt-3 pt-3 border-t border-white/10">
+              <p class="text-sm text-neutral-300">Combinamos lo mejor de varias metodologías:</p>
+              <ul class="mt-2 text-sm text-neutral-400 space-y-2">
+                <li><span class="font-medium text-emerald-400">NIST CSF</span> - Para framework de ciberseguridad</li>
+                <li><span class="font-medium text-emerald-400">OWASP</span> - Para seguridad web y aplicaciones</li>
+                <li><span class="font-medium text-emerald-400">CIS Controls</span> - Para hardening de sistemas</li>
+                <li><span class="font-medium text-emerald-400">Agile</span> - Para desarrollo y entregas iterativas</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Pregunta 7 -->
+          <details class="card rounded-xl p-5 group">
+            <summary class="cursor-pointer font-semibold text-neutral-100 flex items-center justify-between">
+              <span>¿Trabajan con empresas que ya tienen equipo IT?</span>
+              <span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="mt-3 pt-3 border-t border-white/10">
+              <p class="text-sm text-neutral-300">¡Absolutamente! Nos complementamos con equipos IT existentes:</p>
+              <ul class="mt-2 text-sm text-neutral-400 space-y-1 list-disc list-inside">
+                <li>Actuamos como especialistas en ciberseguridad</li>
+                <li>Entrenamos a tu equipo en mejores prácticas</li>
+                <li>Documentamos todo para transferencia de conocimiento</li>
+                <li>Respetamos las jerarquías y procesos existentes</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Pregunta 8 -->
+          <details class="card rounded-xl p-5 group">
+            <summary class="cursor-pointer font-semibold text-neutral-100 flex items-center justify-between">
+              <span>¿Cómo se adaptan a nuestro nivel técnico?</span>
+              <span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="mt-3 pt-3 border-t border-white/10">
+              <p class="text-sm text-neutral-300">Nos adaptamos completamente a tu equipo:</p>
+              <ul class="mt-2 text-sm text-neutral-400 space-y-2">
+                <li><span class="font-medium">Explicaciones técnicas</span> para equipos IT</li>
+                <li><span class="font-medium">Explicaciones ejecutivas</span> para dirección</li>
+                <li><span class="font-medium">Formación práctica</span> para usuarios finales</li>
+                <li><span class="font-medium">Documentación adaptada</span> a cada audiencia</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- CTA adicional -->
+      <div class="mt-12 text-center">
+        <p class="text-neutral-300 mb-4">¿No encuentras respuesta a tu pregunta?</p>
+        <a href="#contacto" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 text-neutral-900 px-5 py-3 font-semibold hover:bg-emerald-400 transition">
+          Contacta con nosotros
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="border-t border-white/10 bg-neutral-900">
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold">Contacto</h2>
+          <p class="mt-2 text-neutral-300">Cuéntanos tu caso. Respondemos en menos de 48 horas laborables.</p>
+          <div class="mt-6 space-y-3 text-sm">
+            <div class="flex items-center gap-3">
+              <span>📧</span>
+              <a href="mailto:hola@colectivoblueteam.test" class="underline">hola@colectivoblueteam.test</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span>💬</span>
+              <a id="waLink" href="#" class="underline">WhatsApp directo</a>
+            </div>
+          </div>
+          <div class="mt-8 text-xs text-neutral-400">*Proyectos cerrados y presupuestos a medida.</div>
+        </div>
+        <form action="https://formspree.io/f/tu-endpoint" method="POST" class="rounded-2xl border border-white/10 bg-neutral-950/60 p-6 space-y-4">
+          <div>
+            <label for="name" class="block text-sm mb-1">Nombre</label>
+            <input id="name" name="name" required class="w-full rounded-xl bg-neutral-900 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm mb-1">Email</label>
+            <input id="email" type="email" name="email" required class="w-full rounded-xl bg-neutral-900 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400" />
+          </div>
+          <div>
+            <label for="service" class="block text-sm mb-1">Servicio de interés</label>
+            <select id="service" name="service" class="w-full rounded-xl bg-neutral-900 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400">
+              <option value="">Seleccionar...</option>
+              <option value="blue-team">Blue Team para PYMES</option>
+              <option value="education">Educación Digital y AMPAs</option>
+              <option value="data">Datos & IA aplicada</option>
+              <option value="it">IT & Open Source</option>
+              <option value="web">Desarrollo web</option>
+              <option value="support">Soporte y acompañamiento</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block text-sm mb-1">Mensaje</label>
+            <textarea id="message" name="message" rows="4" required class="w-full rounded-xl bg-neutral-900 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400"></textarea>
+          </div>
+          <button type="submit" class="w-full rounded-xl bg-emerald-400 text-neutral-900 font-semibold py-2">Enviar</button>
+          <p class="text-xs text-neutral-400">Al enviar aceptas nuestra política de privacidad.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Listo para proteger tu organización?</h2>
+      <p class="mb-8 text-emerald-100">Comienza con una consultoría gratuita de 30 minutos</p>
+      <a href="#contacto" class="inline-flex items-center gap-2 rounded-full bg-white text-emerald-700 px-6 py-3 font-semibold hover:bg-neutral-100 transition">
+        🚀 Solicitar consultoría gratuita
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-neutral-950">
+    <div class="mx-auto max-w-7xl px-4 py-10 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Colectivo Origen BlueTeam. Todos los derechos reservados.</p>
+      <nav class="flex items-center gap-4">
+        <a href="/legal.html" class="hover:text-neutral-200">Aviso legal</a>
+        <a href="/privacidad.html" class="hover:text-neutral-200">Privacidad</a>
+        <a href="/cookies.html" class="hover:text-neutral-200">Cookies</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Menú móvil
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    // WhatsApp link (EDITA el número con prefijo país)
+    const waPhone = '34600000000';
+    const waMsg = encodeURIComponent('Hola, me interesa una propuesta.');
+    const waURL = `https://wa.me/${waPhone}?text=${waMsg}`;
+    const waLink = document.getElementById('waLink');
+    if (waLink) waLink.href = waURL;
+  </script>
+</body>
+</html>
